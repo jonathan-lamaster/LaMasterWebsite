@@ -23,7 +23,7 @@
   
    <!--Cover Image--> 
    
-    <section id="cover">
+    <section class="cover">
         <div id="cover-caption">
             <div class="container">
                 <div class="col-sm-10 col-sm-offset-1">
@@ -208,6 +208,21 @@
     $('html,body').animate( { scrollTop:$(this.hash).offset().top } , 2000);
     } );
     } );
+
+    $(function() {
+    //caches a jQuery object containing the header element
+    var header = $(".cover");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >=10) {
+            header.addClass("shrink");
+        } else {
+            header.removeClass("shrink");
+        }
+    });
+});
+
     </script>
     
   </body>
